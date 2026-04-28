@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block body %}
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>{{job}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+{% if query %}
+    <h1>you're searcing for {{query}}</h1>
+    <br>
+    <br>
+    <h3>count {{results.count}}</h3>
+    {% for r in results %}
+    <h5>
+        <a href="{% url 'job:info' r.slug %}">{{r.title}}</a>
+    </h5>
+    {% endfor %}
+    
+{% endif %}
+    
+
+
+{% endblock body %}
+    

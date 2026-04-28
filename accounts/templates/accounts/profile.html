@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 m-auto">
+                    <div class="job_sumary">
+                        <div class="summery_header">
+                            <h3>Profile Summery</h3>
+                        </div>
+                        <div class="job_content">
+                            <ul>
+                                <li>Name: <span>{{profile}}</span></li>
+                                <li>Phone Number: <span>{{profile.phone_number}} </span></li>
+                                <li>Email: <span>{{profile.user.email}}</span></li>
+                                <li>City: <span>{{profile.city}}</span></li>
+                            </ul>
+                            <button class="boxed-btn3 w-100" type="submit"><a href="{% url 'accounts:profile_edit' %}" style="all:unset;">Edit Profile</a></button>
+                        </div>
+                    </div>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
+                            
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
